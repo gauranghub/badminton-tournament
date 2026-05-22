@@ -97,15 +97,28 @@ export default function App() {
   const completeTournament   = () => { localStorage.setItem("tournament_complete", "true");  setTournamentComplete(true); };
   const reopenTournament     = () => { localStorage.removeItem("tournament_complete");        setTournamentComplete(false); };
 
-  // Persist to localStorage on every change (instant, no server needed)
+  // Persist to localStorage + server on every change
+  const isFirstMatchRender = useRef(true);
   useEffect(() => {
+    if (isFirstMatchRender.current) { isFirstMatchRender.current = false; return; }
     localStorage.setItem("tournament_matches", JSON.stringify(matches));
     fetch("/api/matches", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(matches) }).catch(() => {});
   }, [matches]);
+  const isFirstTeamRender = useRef(true);
   useEffect(() => {
+    if (isFirstTeamRender.current) { isFirstTeamRender.current = false; return; }
     localStorage.setItem("tournament_teams", JSON.stringify(teams));
     fetch("/api/teams", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(teams) }).catch(() => {});
   }, [teams]);
+
+  // Poll server every 5 seconds so spectators see live updates
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetch("/api/matches").then(r => r.json()).then(data => setMatches(data)).catch(() => {});
+      fetch("/api/teams").then(r => r.json()).then(data => setTeams(data)).catch(() => {});
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   const updateMatch = (id, patch) =>
     setMatches(prev => prev.map(m => m.id === id ? { ...m, ...patch } : m));
