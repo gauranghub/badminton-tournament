@@ -1,0 +1,74 @@
+[
+  {
+    "id": "T03",
+    "name": "Smash Titans",
+    "p1": "Rahul",
+    "p2": "Amit",
+    "group": "A",
+    "color": "blue",
+    "level": "Intermediate"
+  },
+  {
+    "id": "T04",
+    "name": "Net Ninjas",
+    "p1": "Karan",
+    "p2": "Vikas",
+    "group": "A",
+    "color": "blue",
+    "level": "Beginner"
+  },
+  {
+    "id": "T05",
+    "name": "Shuttle Warriors",
+    "p1": "Rohit",
+    "p2": "Sandeep",
+    "group": "A",
+    "color": "blue",
+    "level": "Intermediate"
+  },
+  {
+    "id": "T06",
+    "name": "Court Kings",
+    "p1": "Ankit",
+    "p2": "Deepak",
+    "group": "A",
+    "color": "blue",
+    "level": "Beginner"
+  },
+  {
+    "id": "T07",
+    "name": "Rapid Racquets",
+    "p1": "Nikhil",
+    "p2": "Manish",
+    "group": "B",
+    "color": "green",
+    "level": "Intermediate"
+  },
+  {
+    "id": "T08",
+    "name": "Flying Shuttles",
+    "p1": "Yash",
+    "p2": "Arjun",
+    "group": "B",
+    "color": "green",
+    "level": "Beginner"
+  },
+  {
+    "id": "T09",
+    "name": "Ace Strikers",
+    "p1": "Harsh",
+    "p2": "Pratik",
+    "group": "B",
+    "color": "green",
+    "level": "Intermediate"
+  },
+  {
+    "id": "T10",
+    "name": "Thunder Smash",
+    "p1": "Abhishek",
+    "p2": "Rajat",
+    "group": "B",
+    "color": "green",
+    "level": "Beginner"
+  }
+]
