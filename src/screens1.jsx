@@ -222,8 +222,8 @@ export function LiveScoreboardPreview() {
 
 // --------------- LOGIN ---------------
 export function LoginScreen({ onLogin }) {
-  const [email, setEmail] = React.useState("admin@gmail.com");
-  const [pass, setPass] = React.useState("turtle");
+  const [email, setEmail] = React.useState("");
+  const [pass, setPass] = React.useState("");
   const [error, setError] = React.useState(false);
 
   const handleLogin = () => {
